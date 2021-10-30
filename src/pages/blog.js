@@ -1,6 +1,6 @@
 import React from "react";
 
-import Layout from "../components/layout";
+import Layout from "../components/Layout";
 import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 
@@ -23,7 +23,7 @@ export const query = graphql`
     allMdx(sort: { fields: frontmatter___date, order: DESC }) {
       nodes {
         frontmatter {
-          date(formatString: "MMMM D, YYYY")
+          date(formatString: "MMMM DD, YYYY")
           title
         }
         id
