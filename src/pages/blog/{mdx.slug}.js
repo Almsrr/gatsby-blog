@@ -10,16 +10,22 @@ function BlogPost({ data }) {
 
   return (
     <Layout pageTitle={data.mdx.frontmatter.title}>
-      <Link to="/blog">Back to blog articles</Link>
-      <p>Posted: {data.mdx.frontmatter.date}</p>
-      <GatsbyImage image={image} alt={data.mdx.frontmatter.hero_image_alt} />
-      <p>
-        Photo Credit:{" "}
-        <a href={data.mdx.frontmatter.hero_image_credit_link} target="_blank">
-          {data.mdx.frontmatter.hero_image_credit_text}
-        </a>
-      </p>
-      <MDXRenderer>{data.mdx.body}</MDXRenderer>
+      <section>
+        <Link to="/blog"> {"<--"} </Link>
+        <p>Posted: {data.mdx.frontmatter.date}</p>
+        <GatsbyImage image={image} alt={data.mdx.frontmatter.hero_image_alt} />
+        <p className="text-muted mt-2">
+          Photo Credit:{" "}
+          <a
+            href={data.mdx.frontmatter.hero_image_credit_link}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {data.mdx.frontmatter.hero_image_credit_text}
+          </a>
+        </p>
+        <MDXRenderer>{data.mdx.body}</MDXRenderer>
+      </section>
     </Layout>
   );
 }
